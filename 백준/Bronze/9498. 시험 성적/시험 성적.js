@@ -4,7 +4,7 @@ const input = readFileSync('/dev/stdin', 'utf-8');
 
 const score = parseInt(input, 10);
 
-const gradingMap = {
+const gradeMap = {
   10: 'A',
   9: 'A',
   8: 'B',
@@ -13,7 +13,7 @@ const gradingMap = {
 };
 
 function getGrade(score) {
-  return gradingMap[Math.floor(score / 10)] ?? 'F';
+  return gradeMap[Math.floor(score / 10)] ?? 'F';
 }
 
 console.log(getGrade(score));
