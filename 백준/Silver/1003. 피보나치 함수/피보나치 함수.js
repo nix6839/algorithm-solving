@@ -17,6 +17,8 @@ for (let i = 2; i <= 40; i += 1) {
   memo.set(i, [zeroCount1 + zeroCount2, oneCount1 + oneCount2]);
 }
 
+let answer = '';
 N_LIST.forEach((N) => {
-  console.log(memo.get(N).join(' '));
+  answer += `${memo.get(N).join(' ')}\n`;
 });
+console.log(answer);
