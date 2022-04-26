@@ -19,6 +19,6 @@ for (let i = 2; i <= 40; i += 1) {
 
 let answer = '';
 for (const N of N_LIST) {
-  answer += `${memo[N].join(' ')}\n`;
+  answer += `${memo[N][0]} ${memo[N][1]}\n`;
 }
 console.log(answer);
