@@ -1,12 +1,8 @@
-const { readFileSync } = require('node:fs');
+const input = require('fs').readFileSync('/dev/stdin', 'utf-8').trim();
 
-const input = readFileSync('/dev/stdin', 'utf-8');
-
-const sentence = input.trim();
-
-if (sentence === '') {
+if (input === '' || input === ' ') {
   console.log(0);
 } else {
-  const words = sentence.split(' ');
-  console.log(words.length);
+  const text = input.split(' ');
+  console.log(text.length);
 }
