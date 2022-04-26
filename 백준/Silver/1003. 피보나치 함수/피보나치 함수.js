@@ -18,7 +18,7 @@ for (let i = 2; i <= 40; i += 1) {
 }
 
 let answer = '';
-N_LIST.forEach((N) => {
+for (const N of N_LIST) {
   answer += `${memo[N].join(' ')}\n`;
-});
+}
 console.log(answer);
