@@ -15,11 +15,15 @@ for (let i = 0; i < STR_K_N_LIST.length; i += 2) {
 K_N_LIST.forEach(([K, N]) => {
   const apart = Array.from({ length: K }, () => []);
   for (let i = 0; i < K; i += 1) {
+    const iFloor = apart[i];
+    const belowFloor = apart[i - 1];
     for (let j = 0; j < N; j += 1) {
-      apart[i][j] = (apart[i - 1]?.[j] ?? j + 1) + (apart[i]?.[j - 1] ?? 0);
-      if (i + 1 === K && j + 1 === N) {
-        console.log(apart[i][j]);
-      }
+      const leftRoom = iFloor[j - 1];
+      const belowRoom = belowFloor?.[j];
+      iFloor[j] = (belowRoom ?? j + 1) + (leftRoom ?? 0);
+    }
+    if (i + 1 === K) {
+      console.log(iFloor[N - 1]);
     }
   }
 });
