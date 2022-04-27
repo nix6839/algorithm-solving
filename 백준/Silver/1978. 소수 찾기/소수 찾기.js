@@ -16,7 +16,7 @@ function isPrime(number) {
   if (number % 2 === 0) {
     return false;
   }
-  const MAX = Math.sqrt(number);
+  const MAX = Math.floor(Math.sqrt(number));
   for (let i = 3; i <= MAX; i += 2) {
     if (number % i === 0) {
       return false;
