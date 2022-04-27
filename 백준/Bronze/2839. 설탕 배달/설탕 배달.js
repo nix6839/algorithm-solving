@@ -2,15 +2,15 @@ const { readFileSync } = require('node:fs');
 
 const input = readFileSync('/dev/stdin', 'utf-8');
 
-const N = parseInt(input.trim(), 10);
+let n = parseInt(input.trim(), 10);
 
-let min;
-for (let i = 0; i <= N; i += 3) {
-  for (let j = 0; i + j <= N; j += 5) {
-    if (i + j === N) {
-      min = Math.min(min ?? Infinity, i / 3 + j / 5);
-      break;
-    }
+let count = 0;
+while (n > 0) {
+  if (n % 5 === 0) {
+    count += n / 5;
+    break;
   }
+  count += 1;
+  n -= 3;
 }
-console.log(min ?? -1);
+console.log(n < 0 ? -1 : count);
