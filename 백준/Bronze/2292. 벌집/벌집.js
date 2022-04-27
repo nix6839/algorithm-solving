@@ -4,13 +4,8 @@ const input = readFileSync('/dev/stdin', 'utf-8');
 
 const N = parseInt(input.trim(), 10);
 
-let max = 1;
 let count = 0;
-while (true) {
-  max += count * 6;
-  if (N <= max) {
-    console.log(count + 1);
-    break;
-  }
+for (let max = 1; max < N; max += count * 6) {
   count += 1;
 }
+console.log(count + 1);
