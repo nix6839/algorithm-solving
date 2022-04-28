@@ -7,21 +7,21 @@ let [M, N] = input
   .split(' ')
   .map((str) => parseInt(str, 10));
 
-const primeMap = new Map(
-  Array.from({ length: N - M + 1 }, (v, i) => [i, i + M]),
-);
-if (primeMap.get(0) === 1) {
-  primeMap.delete(0);
-}
+const isPrime = new Array(N + 1).fill(true);
+isPrime[0] = isPrime[1] = false;
 
-const MAX = Math.sqrt(N);
-for (let checkNumber = 2; checkNumber <= MAX; checkNumber += 1) {
-  for ([index, currentNumber] of primeMap.entries()) {
-    if (currentNumber !== checkNumber && currentNumber % checkNumber === 0) {
-      primeMap.delete(index);
-    }
+const MAX = Math.floor(Math.sqrt(N));
+for (let prime = 2; prime <= MAX; prime += 1) {
+  if (!isPrime[prime]) {
+    continue;
+  }
+  for (let i = 2; prime * i <= N; i += 1) {
+    isPrime[prime * i] = false;
   }
 }
-primeMap.forEach((prime) => {
-  console.log(prime);
-});
+
+for (let i = M; i <= N; i += 1) {
+  if (isPrime[i]) {
+    console.log(i);
+  }
+}
