@@ -12,12 +12,8 @@ function isRightTriangle(hypotenuse, side1, side2) {
 
 STR_TEST_CASES.forEach((STR_TEST_CASE) => {
   const sides = STR_TEST_CASE.split(' ').map((str) => parseInt(str, 10));
-  const hypotenuse = Math.max(...sides);
-  const restSides = sides.filter((side) => side < hypotenuse);
-  if (
-    restSides.length < 2 ||
-    !isRightTriangle(hypotenuse, restSides[0], restSides[1])
-  ) {
+  const [hypotenuse, side1, side2] = sides.sort((a, b) => b - a);
+  if (!isRightTriangle(hypotenuse, side1, side2)) {
     console.log('wrong');
     return;
   }
