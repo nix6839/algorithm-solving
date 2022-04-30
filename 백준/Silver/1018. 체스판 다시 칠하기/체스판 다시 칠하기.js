@@ -1,61 +1,40 @@
-const { readFileSync } = require('node:fs');
+var fs = require('fs');
+var inputData = fs.readFileSync('./dev/stdin').toString().split(/\r\n|\r|\n/);
 
-const input = readFileSync('/dev/stdin', 'utf-8');
+var N = parseInt(inputData[0].split(' ')[0]);
+var M = parseInt(inputData[0].split(' ')[1]);
 
-const [N_AND_M, ...BOARD] = input.trim().split('\n');
-const [N, M] = N_AND_M.split(' ').map((str) => parseInt(str, 10));
+var board = [];
 
-function rotateN90(toRotateArr) {
-  const ret = new Array(toRotateArr[0].length).fill('');
-  for (let i = 0; i < toRotateArr.length; i += 1) {
-    for (let j = 0; j < toRotateArr[0].length; j += 1) {
-      const char = toRotateArr[i][j];
-      ret[j] = char + ret[j];
-    }
-  }
-  return ret;
+for(var i = 1; i <= N; i++) {
+  board.push(inputData[i].split(''));
 }
 
-function reverseColor(color) {
-  return color === 'W' ? 'B' : 'W';
-}
+var minimum = 2501;
 
-function getRepaintCount(board) {
-  let cnt = 0;
-  let nextColor = board[0][0];
-  for (let n = 0; n < board.length; n += 1) {
-    for (let m = 0; m < board[0].length; m += 1) {
-      if (board[n][m] !== nextColor) {
-        cnt += 1;
-      }
-      nextColor = reverseColor(nextColor);
-    }
-    nextColor = reverseColor(nextColor);
-  }
-  return cnt;
-}
-
-function getMinRepaintCount(n, m) {
-  const maxNOffset = n - 8;
-  const maxMOffset = m - 8;
-
-  let minRepaintCount = Infinity;
-  for (let nOffset = 0; nOffset <= maxNOffset; nOffset += 1) {
-    const eightLinesBoard = BOARD.slice(nOffset, nOffset + 8);
-    for (let mOffset = 0; mOffset <= maxMOffset; mOffset += 1) {
-      let board88 = eightLinesBoard.map((line) =>
-        line.slice(mOffset, mOffset + 8),
-      );
-      for (let i = 0; i < 4; i += 1) {
-        board88 = rotateN90(board88);
-        const repaintCount = getRepaintCount(board88);
-        if (repaintCount < minRepaintCount) {
-          minRepaintCount = repaintCount;
+for(var i = 0; i <= N - 8; i++) {
+  for(var j = 0; j <= M - 8; j++) {
+    var typeA = 0;
+    var typeB = 0;
+    for(var k = i; k < i + 8; k++) {
+      for(var l = j; l < j + 8; l++) {
+        if((k+l) % 2 === 1) {
+          if(board[k][l] === 'W') {
+            typeA++;
+          }else {
+            typeB++;
+          }
+        } else {
+          if(board[k][l] === 'B') {
+            typeA++;
+          }else {
+            typeB++;
+          }
         }
       }
     }
+    if(minimum > typeA) minimum = typeA;
+    if(minimum > typeB) minimum = typeB;
   }
-  return minRepaintCount;
 }
-
-console.log(getMinRepaintCount(N, M));
+console.log(minimum);
