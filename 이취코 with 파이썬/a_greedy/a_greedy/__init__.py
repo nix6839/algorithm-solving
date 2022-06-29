@@ -1,0 +1,1 @@
+from .law_of_large_numbers import law_of_large_numbers
