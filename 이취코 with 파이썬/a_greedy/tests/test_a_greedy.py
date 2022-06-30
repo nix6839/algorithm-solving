@@ -1,6 +1,6 @@
 from a_greedy import law_of_large_numbers
 
 
-def test_version():
-    law_of_large_numbers()
-    assert "0.1.0" == '0.1.0'
+def test_law_of_large_numbers():
+    assert law_of_large_numbers(8, 3, [2, 4, 5, 4, 6]) == 46
+    assert law_of_large_numbers(7, 2, [3, 4, 3, 4, 3]) == 28
