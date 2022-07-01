@@ -6,7 +6,7 @@
 from typing import List
 
 
-def law_of_large_numbers(M: int, K: int, nums: List[int]) -> int:
+def a_law_of_large_numbers(M: int, K: int, nums: List[int]) -> int:
     '''
     M (1 <= M <= 10,000): 숫자가 더해지는 횟수
     K (1 <= K <= 10,000): 똑같은 인덱스가 연속으로 K번까지만 더해질 수 있다.
@@ -26,6 +26,6 @@ if __name__ == '__main__':
     def main():
         _N, M, K = map(int, input().split())
         nums = list(map(int, input().split()))
-        print(law_of_large_numbers(M, K, nums))
+        print(a_law_of_large_numbers(M, K, nums))
 
     main()
