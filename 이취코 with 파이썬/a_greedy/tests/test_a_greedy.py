@@ -1,4 +1,5 @@
-from a_greedy import a_law_of_large_numbers, b_number_card_game
+from a_greedy import (a_law_of_large_numbers, b_number_card_game,
+                      c_to_one_number)
 
 
 def test_a_law_of_large_numbers():
@@ -16,3 +17,8 @@ def test_b_number_card_game():
         [7, 3, 1, 8],
         [3, 3, 3, 4],
     ]) == 3
+
+
+def test_c_to_one_number():
+    assert c_to_one_number(25, 5) == 2
+    assert c_to_one_number(25, 3) == 6
