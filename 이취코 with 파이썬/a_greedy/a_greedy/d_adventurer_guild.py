@@ -8,7 +8,7 @@ from typing import List
 
 def d_adventurer_guild(adventurers: List[int]) -> int:
     sorted_adventurers = sorted(adventurers)
-    count = 0
+    group_count = 0
 
     adventurer_count = 0
     max_fear = 0
@@ -16,11 +16,11 @@ def d_adventurer_guild(adventurers: List[int]) -> int:
         max_fear = max(adventurer, max_fear)
         adventurer_count += 1
         if adventurer_count == max_fear:
-            count += 1
+            group_count += 1
             adventurer_count = 0
             max_fear = 0
 
-    return count
+    return group_count
 
 
 if __name__ == '__main__':
