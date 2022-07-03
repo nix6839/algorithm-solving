@@ -9,12 +9,9 @@ def f_reverse_string(binary_str: str) -> int:
     prev_binary_char = None
 
     for binary_char in binary_str:
-        prev_is_zero = prev_binary_char == '0'
-        prev_is_one = prev_binary_char == '1'
-
-        if binary_char == '0' and not prev_is_zero:
+        if binary_char == '0' and prev_binary_char != '0':
             zero_count += 1
-        elif binary_char == '1' and not prev_is_one:
+        elif binary_char == '1' and prev_binary_char != '1':
             one_count += 1
         prev_binary_char = binary_char
 
