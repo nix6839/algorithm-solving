@@ -1,6 +1,6 @@
 '''
 p314. 만들 수 없는 금액
-TODO: 재풀이 필요.
+TODO: 재풀이 필요
 '''
 
 from typing import List
