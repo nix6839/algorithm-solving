@@ -11,14 +11,12 @@ def d_adventurer_guild(adventurers: List[int]) -> int:
     group_count = 0
 
     adventurer_count = 0
-    max_fear = 0
     for adventurer in sorted_adventurers:
-        max_fear = max(adventurer, max_fear)
         adventurer_count += 1
-        if adventurer_count == max_fear:
+
+        if adventurer_count == adventurer:
             group_count += 1
             adventurer_count = 0
-            max_fear = 0
 
     return group_count
 
