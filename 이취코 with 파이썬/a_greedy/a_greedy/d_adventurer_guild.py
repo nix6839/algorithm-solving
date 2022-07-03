@@ -7,11 +7,10 @@ from typing import List
 
 
 def d_adventurer_guild(adventurers: List[int]) -> int:
-    sorted_adventurers = sorted(adventurers)
     group_count = 0
 
     adventurer_count = 0
-    for adventurer in sorted_adventurers:
+    for adventurer in sorted(adventurers):
         adventurer_count += 1
 
         if adventurer_count == adventurer:
