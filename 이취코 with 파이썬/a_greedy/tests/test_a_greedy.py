@@ -1,6 +1,7 @@
 from a_greedy import (a_law_of_large_numbers, b_number_card_game,
                       c_to_one_number)
 from a_greedy.d_adventurer_guild import d_adventurer_guild
+from a_greedy.e_multiply_or_add import e_multiply_or_add
 
 
 def test_a_law_of_large_numbers():
@@ -32,3 +33,9 @@ def test_d_adventurer_guild():
     assert d_adventurer_guild([1, 1, 1, 4]) == 3
     assert d_adventurer_guild([3, 3, 3, 4]) == 1
     assert d_adventurer_guild([4, 1, 2, 3]) == 1
+
+
+def test_e_multiply_or_add():
+    assert e_multiply_or_add('02984') == 576
+    assert e_multiply_or_add('567') == 210
+    assert e_multiply_or_add('10516100') == 37
