@@ -1,0 +1,36 @@
+function solution(s) {
+    const MAX_COMPRESS_LEN = Math.floor(s.length / 2);
+    let shortLen = s.length;
+
+    for (let compSize = 1; compSize <= MAX_COMPRESS_LEN; compSize += 1) {
+        const compLen = compressStr(s, compSize);
+        if (shortLen > compLen) {
+            shortLen = compLen;
+        }
+    }
+    
+    return shortLen;
+}
+
+    
+function compressStr(s, compSize) {
+    let compLen = 0;
+    let compStr = s.slice(0, compSize);
+    let count = 1;
+
+    for (let i = compSize; compStr.length !== 0; i += compSize) {
+        const subStr = s.slice(i, i + compSize);
+        if (compStr !== subStr) {
+            if (count === 1) {
+                compLen += compStr.length;
+            } else {
+                compLen += count.toString().length + compSize;
+                count = 1;
+            }
+            compStr = subStr;
+        } else {
+            count += 1;
+        }
+    }
+    return compLen;
+}
