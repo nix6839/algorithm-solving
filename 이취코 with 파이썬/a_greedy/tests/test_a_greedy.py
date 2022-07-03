@@ -1,7 +1,7 @@
 from a_greedy import (a_law_of_large_numbers, b_number_card_game,
                       c_to_one_number, d_adventurer_guild, e_multiply_or_add,
                       f_reverse_string, g_cannot_be_made_amount,
-                      h_choose_bowling_ball)
+                      h_choose_bowling_ball, i_muji_mukbang_live)
 
 
 def test_a_law_of_large_numbers():
@@ -57,3 +57,7 @@ def test_h_choose_bowling_ball():
     assert h_choose_bowling_ball([1, 3, 2, 3, 2]) == 8
     assert h_choose_bowling_ball([1, 5, 4, 3, 2, 4, 5, 2]) == 25
     assert h_choose_bowling_ball([1, 1, 1, 2, 3]) == 7
+
+
+def test_i_muji_mukbang_live():
+    assert i_muji_mukbang_live([3, 1, 2], 5) == 1

@@ -9,3 +9,4 @@ from .g_cannot_be_made_amount import \
     g_cannot_be_made_amount as g_cannot_be_made_amount
 from .h_choose_bowling_ball import \
     h_choose_bowling_ball as h_choose_bowling_ball
+from .i_muji_mukbang_live import i_muji_mukbang_live as i_muji_mukbang_live
