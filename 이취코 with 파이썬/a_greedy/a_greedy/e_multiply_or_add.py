@@ -7,7 +7,7 @@ def e_multiply_or_add(number_str: str) -> int:
     total = 0
     for digit_str in number_str:
         digit = int(digit_str)
-        if total == 0 or digit in {0, 1}:
+        if digit in {0, 1} or total in {0, 1}:
             total += digit
         else:
             total *= digit

@@ -37,7 +37,8 @@ def test_d_adventurer_guild():
 def test_e_multiply_or_add():
     assert e_multiply_or_add('02984') == 576
     assert e_multiply_or_add('567') == 210
-    assert e_multiply_or_add('10516100') == 37
+    assert e_multiply_or_add('10516100') == 43
+    assert e_multiply_or_add('19516100') == 307
 
 
 def test_f_reverse_string():
