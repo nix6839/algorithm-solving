@@ -1,7 +1,6 @@
 from a_greedy import (a_law_of_large_numbers, b_number_card_game,
-                      c_to_one_number)
-from a_greedy.d_adventurer_guild import d_adventurer_guild
-from a_greedy.e_multiply_or_add import e_multiply_or_add
+                      c_to_one_number, d_adventurer_guild, e_multiply_or_add,
+                      f_reverse_string)
 
 
 def test_a_law_of_large_numbers():
@@ -39,3 +38,8 @@ def test_e_multiply_or_add():
     assert e_multiply_or_add('02984') == 576
     assert e_multiply_or_add('567') == 210
     assert e_multiply_or_add('10516100') == 37
+
+
+def test_f_reverse_string():
+    assert f_reverse_string('0001100') == 1
+    assert f_reverse_string('01110010100') == 3
