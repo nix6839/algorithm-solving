@@ -1,6 +1,7 @@
 from a_greedy import (a_law_of_large_numbers, b_number_card_game,
                       c_to_one_number, d_adventurer_guild, e_multiply_or_add,
-                      f_reverse_string, g_cannot_be_made_amount)
+                      f_reverse_string, g_cannot_be_made_amount,
+                      h_choose_bowling_ball)
 
 
 def test_a_law_of_large_numbers():
@@ -50,3 +51,8 @@ def test_g_cannot_be_made_amount():
     assert g_cannot_be_made_amount([3, 2, 1, 1, 9]) == 8
     assert g_cannot_be_made_amount([3, 5, 7]) == 1
     assert g_cannot_be_made_amount([5, 1, 6, 2, 1]) == 16
+
+
+def test_h_choose_bowling_ball():
+    assert h_choose_bowling_ball([1, 3, 2, 3, 2]) == 8
+    assert h_choose_bowling_ball([1, 5, 4, 3, 2, 4, 5, 2]) == 25

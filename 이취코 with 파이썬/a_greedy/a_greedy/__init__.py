@@ -7,3 +7,5 @@ from .e_multiply_or_add import e_multiply_or_add as e_multiply_or_add
 from .f_reverse_string import f_reverse_string as f_reverse_string
 from .g_cannot_be_made_amount import \
     g_cannot_be_made_amount as g_cannot_be_made_amount
+from .h_choose_bowling_ball import \
+    h_choose_bowling_ball as h_choose_bowling_ball
