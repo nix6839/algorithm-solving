@@ -56,3 +56,4 @@ def test_g_cannot_be_made_amount():
 def test_h_choose_bowling_ball():
     assert h_choose_bowling_ball([1, 3, 2, 3, 2]) == 8
     assert h_choose_bowling_ball([1, 5, 4, 3, 2, 4, 5, 2]) == 25
+    assert h_choose_bowling_ball([1, 1, 1, 2, 3]) == 7
