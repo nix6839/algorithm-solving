@@ -5,3 +5,5 @@ from .c_to_one_number import c_to_one_number as c_to_one_number
 from .d_adventurer_guild import d_adventurer_guild as d_adventurer_guild
 from .e_multiply_or_add import e_multiply_or_add as e_multiply_or_add
 from .f_reverse_string import f_reverse_string as f_reverse_string
+from .g_cannot_be_made_amount import \
+    g_cannot_be_made_amount as g_cannot_be_made_amount
