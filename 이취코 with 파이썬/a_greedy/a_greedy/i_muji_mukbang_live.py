@@ -12,8 +12,8 @@ def i_muji_mukbang_live(food_times: List[int], k: int) -> int:
 
 if __name__ == '__main__':
     def main():
-        # _N, _M = map(int, input().split())
-        # weights = list(map(int, input().split()))
-        print(i_muji_mukbang_live([3, 1, 2], 5))
+        food_times = list(map(int, input().split()))
+        k = int(input())
+        print(i_muji_mukbang_live(food_times, k))
 
     main()

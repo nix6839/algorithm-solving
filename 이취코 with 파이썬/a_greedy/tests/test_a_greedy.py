@@ -61,3 +61,7 @@ def test_h_choose_bowling_ball():
 
 def test_i_muji_mukbang_live():
     assert i_muji_mukbang_live([3, 1, 2], 5) == 1
+    assert i_muji_mukbang_live([10, 9, 3], 8) == 3
+    assert i_muji_mukbang_live([2, 8, 1, 2], 11) == 2
+    assert i_muji_mukbang_live([2, 1, 1, 2], 8) == -1
+    assert i_muji_mukbang_live([2, 5, 4, 1], 8) == 3
