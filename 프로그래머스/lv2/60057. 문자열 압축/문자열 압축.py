@@ -2,22 +2,23 @@ from functools import reduce
 
 
 def compressed_len(to_compress: str, unit_len: int) -> int:
-    unit = to_compress[:unit_len]
+    unit = ''
     count = 1
     ret = 0
 
-    i = unit_len
-    while len(unit) != 0:
-        next_unit = to_compress[i:i + unit_len]
-        if unit != next_unit:
-            ret += len(unit)
+    for i in range(0, len(to_compress), unit_len):
+        temp = to_compress[i:i + unit_len]
+        if unit == temp:
+            count += 1
+        elif unit != temp:
+            ret += len(temp)
             if count > 1:
                 ret += len(str(count))
                 count = 1
-            unit = next_unit
-        else:
-            count += 1
-        i += unit_len
+            unit = temp
+
+    if count > 1:
+        ret += len(str(count))
 
     return ret
 
