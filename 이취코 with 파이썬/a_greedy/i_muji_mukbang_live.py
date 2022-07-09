@@ -1,6 +1,6 @@
 '''
 p316. 무지의 먹방 라이브
-https://programmers.co.kr/learn/courses/30/lessons/42891?language=python3
+https://school.programmers.co.kr/learn/courses/30/lessons/42891?language=python3
 '''
 
 from typing import List
