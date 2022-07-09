@@ -15,19 +15,19 @@ function compressStr(s, compSize) {
     let compStr = s.slice(0, compSize);
     let count = 1;
 
-    for (let i = compSize; compStr.length !== 0; i += compSize) {
+    for (let i = compSize; i < s.length; i += compSize) {
         const subStr = s.slice(i, i + compSize);
         if (compStr !== subStr) {
-            if (count === 1) {
-                compLen += compStr.length;
-            } else {
-                compLen += count.toString().length + compSize;
-                count = 1;
+            compLen += compStr.length;
+            if (count > 1) {
+                compLen += count.toString().length;
+                count = 1
             }
             compStr = subStr;
         } else {
             count += 1;
         }
     }
+    compLen += compStr.length;
     return compLen;
 }
