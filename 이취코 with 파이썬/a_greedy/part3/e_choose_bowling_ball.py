@@ -6,7 +6,7 @@ TODO: 재풀이 필요
 from typing import Dict, List
 
 
-def h_choose_bowling_ball(weights: List[int]) -> int:
+def e_choose_bowling_ball(weights: List[int]) -> int:
     '''
     M: 공의 최대 무게 (1 <= M <= 10)
     '''
@@ -32,6 +32,6 @@ if __name__ == '__main__':
     def main():
         _N, _M = map(int, input().split())
         weights = list(map(int, input().split()))
-        print(h_choose_bowling_ball(weights))
+        print(e_choose_bowling_ball(weights))
 
     main()

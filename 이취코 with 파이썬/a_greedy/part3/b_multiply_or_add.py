@@ -3,7 +3,7 @@ p312. 곱하기 혹은 더하기
 '''
 
 
-def e_multiply_or_add(number_str: str) -> int:
+def b_multiply_or_add(number_str: str) -> int:
     total = 0
     for digit_str in number_str:
         digit = int(digit_str)
@@ -17,6 +17,6 @@ def e_multiply_or_add(number_str: str) -> int:
 if __name__ == '__main__':
     def main():
         number_str = input()
-        print(e_multiply_or_add(number_str))
+        print(b_multiply_or_add(number_str))
 
     main()

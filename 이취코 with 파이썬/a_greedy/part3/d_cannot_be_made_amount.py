@@ -6,7 +6,7 @@ TODO: 재풀이 필요
 from typing import List
 
 
-def g_cannot_be_made_amount(coins: List[int]) -> int:
+def d_cannot_be_made_amount(coins: List[int]) -> int:
     min_amount = 1
 
     for coin in sorted(coins):
@@ -21,7 +21,7 @@ if __name__ == '__main__':
     def main():
         _N = int(input())
         coins = list(map(int, input().split()))
-        print(g_cannot_be_made_amount(coins))
+        print(d_cannot_be_made_amount(coins))
 
     main()
 

@@ -3,7 +3,7 @@ p313. 문자열 뒤집기
 '''
 
 
-def f_reverse_string(binary_str: str) -> int:
+def c_reverse_string(binary_str: str) -> int:
     zero_count = 0
     one_count = 0
     prev_binary_char = None
@@ -21,6 +21,6 @@ def f_reverse_string(binary_str: str) -> int:
 if __name__ == '__main__':
     def main():
         binary_str = input()
-        print(f_reverse_string(binary_str))
+        print(c_reverse_string(binary_str))
 
     main()

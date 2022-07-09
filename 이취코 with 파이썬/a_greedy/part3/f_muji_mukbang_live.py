@@ -6,7 +6,7 @@ https://school.programmers.co.kr/learn/courses/30/lessons/42891?language=python3
 from typing import List
 
 
-def i_muji_mukbang_live(food_times: List[int], k: int) -> int:
+def f_muji_mukbang_live(food_times: List[int], k: int) -> int:
     return 0
 
 
@@ -14,6 +14,6 @@ if __name__ == '__main__':
     def main():
         food_times = list(map(int, input().split()))
         k = int(input())
-        print(i_muji_mukbang_live(food_times, k))
+        print(f_muji_mukbang_live(food_times, k))
 
     main()

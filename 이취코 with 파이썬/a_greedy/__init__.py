@@ -1,12 +1,16 @@
-from .a_law_of_large_numbers import \
-    a_law_of_large_numbers as a_law_of_large_numbers
-from .b_number_card_game import b_number_card_game as b_number_card_game
-from .c_to_one_number import c_to_one_number as c_to_one_number
-from .d_adventurer_guild import d_adventurer_guild as d_adventurer_guild
-from .e_multiply_or_add import e_multiply_or_add as e_multiply_or_add
-from .f_reverse_string import f_reverse_string as f_reverse_string
-from .g_cannot_be_made_amount import \
-    g_cannot_be_made_amount as g_cannot_be_made_amount
-from .h_choose_bowling_ball import \
-    h_choose_bowling_ball as h_choose_bowling_ball
-from .i_muji_mukbang_live import i_muji_mukbang_live as i_muji_mukbang_live
+from .part2.a_law_of_large_numbers import \
+    a_law_of_large_numbers as part2_a_law_of_large_numbers
+from .part2.b_number_card_game import \
+    b_number_card_game as part2_b_number_card_game
+from .part2.c_to_one_number import c_to_one_number as part2_c_to_one_number
+from .part3.a_adventurer_guild import \
+    a_adventurer_guild as part3_a_adventurer_guild
+from .part3.b_multiply_or_add import \
+    b_multiply_or_add as part3_b_multiply_or_add
+from .part3.c_reverse_string import c_reverse_string as part3_c_reverse_string
+from .part3.d_cannot_be_made_amount import \
+    d_cannot_be_made_amount as part3_d_cannot_be_made_amount
+from .part3.e_choose_bowling_ball import \
+    e_choose_bowling_ball as part3_e_choose_bowling_ball
+from .part3.f_muji_mukbang_live import \
+    f_muji_mukbang_live as part3_f_muji_mukbang_live
