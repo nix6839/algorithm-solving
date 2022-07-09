@@ -18,10 +18,11 @@ function compressStr(s, compSize) {
     for (let i = compSize; compStr.length !== 0; i += compSize) {
         const subStr = s.slice(i, i + compSize);
         if (compStr !== subStr) {
-            compLen += compStr.length;
-            if (count > 1) {
-                compLen += count.toString().length;
-                count = 1
+            if (count === 1) {
+                compLen += compStr.length;
+            } else {
+                compLen += count.toString().length + compSize;
+                count = 1;
             }
             compStr = subStr;
         } else {
