@@ -3,10 +3,7 @@ function solution(s) {
     let shortLen = s.length;
 
     for (let compSize = 1; compSize <= MAX_COMPRESS_LEN; compSize += 1) {
-        const compLen = compressStr(s, compSize);
-        if (shortLen > compLen) {
-            shortLen = compLen;
-        }
+        shortLen = Math.min(shortLen, compressStr(s, compSize))
     }
     
     return shortLen;
@@ -24,8 +21,8 @@ function compressStr(s, compSize) {
             if (count === 1) {
                 compLen += compStr.length;
             } else {
-                compLen += count.toString().length + compSize;
-                count = 1;
+                compLen += count.toString().length + compStr.length;
+                count = 1
             }
             compStr = subStr;
         } else {
