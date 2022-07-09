@@ -1,12 +1,12 @@
 function solution(s) {
-    const MAX_COMPRESS_LEN = Math.floor(s.length / 2);
-    let shortLen = s.length;
+    const MAX_UNIT_LEN = Math.floor(s.length / 2);
+    let minUnitLen = s.length;
 
-    for (let compSize = 1; compSize <= MAX_COMPRESS_LEN; compSize += 1) {
-        shortLen = Math.min(shortLen, compressStr(s, compSize))
+    for (let unitLen = 1; unitLen <= MAX_UNIT_LEN; unitLen += 1) {
+        minUnitLen = Math.min(minUnitLen, compressStr(s, unitLen))
     }
     
-    return shortLen;
+    return minUnitLen;
 }
 
     
@@ -15,7 +15,7 @@ function compressStr(s, compSize) {
     let compStr = s.slice(0, compSize);
     let count = 1;
 
-    for (let i = compSize; i < s.length; i += compSize) {
+    for (let i = compSize; compStr.length !== 0; i += compSize) {
         const subStr = s.slice(i, i + compSize);
         if (compStr !== subStr) {
             compLen += compStr.length;
@@ -28,6 +28,5 @@ function compressStr(s, compSize) {
             count += 1;
         }
     }
-    compLen += compStr.length;
     return compLen;
 }
