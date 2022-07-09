@@ -1,0 +1,1 @@
+from .part3.a_lucky_straight import a_lucky_straight as part3_a_lucky_straight
