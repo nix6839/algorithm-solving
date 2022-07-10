@@ -1,32 +1,37 @@
 function solution(s) {
-    const MAX_UNIT_LEN = Math.floor(s.length / 2);
-    let minUnitLen = s.length;
+  const MAX_UNIT_LEN = Math.floor(s.length / 2);
+  let minCompressedLen = s.length;
 
-    for (let unitLen = 1; unitLen <= MAX_UNIT_LEN; unitLen += 1) {
-        minUnitLen = Math.min(minUnitLen, compressStr(s, unitLen))
-    }
-    
-    return minUnitLen;
+  for (let unitLen = 1; unitLen <= MAX_UNIT_LEN; unitLen += 1) {
+    minCompressedLen = Math.min(minCompressedLen, compressedLen(s, unitLen));
+  }
+
+  return minCompressedLen;
 }
 
-    
-function compressStr(s, compSize) {
-    let compLen = 0;
-    let compStr = s.slice(0, compSize);
-    let count = 1;
+/**
+ *
+ * @param {string} toCompress
+ * @param {number} unitLen
+ * @returns {number}
+ */
+function compressedLen(toCompress, unitLen) {
+  let unit = toCompress.slice(0, unitLen);
+  let count = 1;
+  let ret = 0;
 
-    for (let i = compSize; compStr.length !== 0; i += compSize) {
-        const subStr = s.slice(i, i + compSize);
-        if (compStr !== subStr) {
-            compLen += compStr.length;
-            if (count > 1) {
-                compLen += count.toString().length;
-                count = 1
-            }
-            compStr = subStr;
-        } else {
-            count += 1;
-        }
+  for (let i = unitLen; unit.length !== 0; i += unitLen) {
+    const nextUnit = toCompress.slice(i, i + unitLen);
+    if (unit !== nextUnit) {
+      ret += unit.length;
+      if (count > 1) {
+        ret += count.toString().length;
+        count = 1;
+      }
+      unit = nextUnit;
+    } else {
+      count += 1;
     }
-    return compLen;
+  }
+  return ret;
 }
