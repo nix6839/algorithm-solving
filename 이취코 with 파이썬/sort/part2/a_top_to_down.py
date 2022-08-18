@@ -13,7 +13,7 @@ def a_top_to_down(N: List[int]) -> List[int]:
 if __name__ == '__main__':
     def main():
         N = int(input())
-        numbers = [int(input(N)) for _ in range(N)]
+        numbers = [int(input()) for _ in range(N)]
         answer = ' '.join(map(str, a_top_to_down(numbers)))
         print(answer)
 
