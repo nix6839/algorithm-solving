@@ -6,8 +6,8 @@ p178. 위에서 아래로
 from typing import List
 
 
-def a_top_to_down(N: List[int]) -> List[int]:
-    return sorted(N, reverse=True)
+def a_top_to_down(numbers: List[int]) -> List[int]:
+    return sorted(numbers, reverse=True)
 
 
 if __name__ == '__main__':
