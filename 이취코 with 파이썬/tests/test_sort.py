@@ -1,4 +1,5 @@
-from sort import part2_a_top_to_down, part2_b_low_score_student
+from sort import (part2_a_top_to_down, part2_b_low_score_student,
+                  part2_c_exchange_element)
 
 
 def test_part2_a_top_down():
@@ -14,3 +15,8 @@ def test_part2_b_low_score_student():
     assert part2_b_low_score_student(
         [('홍길동', 5), ('이순신', 99), ('잡스', 82)]
     ) == ['홍길동', '잡스', '이순신']
+
+
+def test_part2_c_exchange_element():
+    assert part2_c_exchange_element([1, 2, 5, 4, 3], [5, 5, 6, 6, 5], 3) == 26
+    assert part2_c_exchange_element([3, 6, 1, 9, 2], [2, 6, 1, 6, 10], 2) == 34
