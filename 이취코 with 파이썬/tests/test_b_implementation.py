@@ -29,4 +29,4 @@ def test_part3_d_lock_and_key():
         [1, 1, 1],
         [1, 1, 0],
         [1, 0, 1]
-    ]) == True
+    ]) is True
