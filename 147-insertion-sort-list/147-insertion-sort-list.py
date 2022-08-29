@@ -11,13 +11,7 @@ class Solution:
             while cur.next and cur.next.val < head.val:
                 cur = cur.next
             
-            tmp1 = head
-            tmp2 = cur.next
-            tmp3 = head.next
-            
-            cur.next = head
-            head.next = tmp2
-            head = tmp3
+            cur.next, cur.next.next, head = head, cur.next, head.next
 
             cur = parent
 
