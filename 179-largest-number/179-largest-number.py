@@ -4,12 +4,10 @@ class Solution:
 
   def my_sort(self, nums: List[int]) -> List[int]:
     for i in range(len(nums)):
-      j = i
       for j in range(i, 0, -1):
         if not self.compare(nums[j - 1], nums[j]):
           break
         nums[j], nums[j - 1] = nums[j - 1], nums[j]
-
     return nums
     
   def largestNumber(self, nums: List[int]) -> str:
