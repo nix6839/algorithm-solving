@@ -1,7 +1,7 @@
 class Solution:
     @staticmethod
     def remove_non_alphanumeric(s: str) -> str:
-      return re.sub(r'[^a-zA-Z0-9]', '', s)
+      return ''.join(ch for ch in s if ch.isalnum())
     
     @staticmethod
     def cut_half_str(s: str) -> tuple[str, str]:
