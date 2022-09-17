@@ -3,8 +3,6 @@ class Solution:
         nums_map = {}
 
         for i, num in enumerate(nums):
-          nums_map[num] = i
-          
-        for i, num in enumerate(nums):
-          if target - num in nums_map and nums_map[target - num] != i:
+          if target - num in nums_map:
             return [i, nums_map[target - num]]
+          nums_map[num] = i
